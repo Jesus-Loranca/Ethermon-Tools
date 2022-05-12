@@ -23,7 +23,7 @@ export class AppComponent {
 		Object.entries(mon.stats).forEach(
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			([stat, values]) => {
-				mon.bp += ((values[0]) + (values[1] * this.lvl) / 6);
+				mon.bp += ((values[0]) + (values[1] * this.lvl)) / 6;
 			}
 		);
 	}
@@ -34,7 +34,7 @@ export class AppComponent {
 		this.orderMonsByBP();
 
 		mons.forEach((mon) => {
-			this.orderedMons.push(mon.name + ': ' + mon.bp + ' BP');
+			this.orderedMons.push(mon.name + ': ' + mon.bp.toFixed(2) + ' BP');
 		});
 	}
 
