@@ -1,4 +1,9 @@
-<form #form="ngForm" (submit)="orderMonsByBP(form)">
+<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
     <input type="number" min="0" max="100" placeholder="100" name="lvl" ngModel/>
     <button type="submit">Show the best Mons</button>
 </form>
+
+<div *ngIf="isSubmited">
+	<h2>Best Mons at level {{ lvl }}:</h2>
+	<p *ngFor="let mon of orderedMons">{{ mon }}</p>
+</div>

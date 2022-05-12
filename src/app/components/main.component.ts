@@ -9,29 +9,41 @@ import { Mon } from '../data/types/mon';
 })
 
 export class AppComponent {
+	lvl = 100;
+	orderedMons: Array<string> = [];
+	isSubmited = false;
+
 	/**
 	 * Calculates the Mon BP based on the lvl received.
 	 * @param mon Mon
-	 * @param lvl number
 	 */
-	calculateStatsByLvl(mon: Mon, lvl: number) {
+	calculateStatsByLvl(mon: Mon) {
+		mon.bp = 0;
+
 		Object.entries(mon.stats).forEach(
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			([stat, values]) => {
-				mon.bp += values[0] + values[1] * lvl;
+				mon.bp += ((values[0]) + (values[1] * this.lvl) / 6);
 			}
 		);
 	}
 
+	displayOrderedMons(form: NgForm) {
+		this.orderedMons = [];
+		this.lvl = Number(form.value.lvl) || this.lvl;
+		this.orderMonsByBP();
+
+		mons.forEach((mon) => {
+			this.orderedMons.push(mon.name + ': ' + mon.bp + ' BP');
+		});
+	}
+
 	/**
 	 * Order the received array of Mons by BP.
-	 * @param form ngForm
 	 */
-	orderMonsByBP(form: NgForm) {
-		const lvl: number = Number(form.value.lvl) || 100;
-
+	orderMonsByBP() {
 		mons.forEach((mon: Mon) => {
-			this.calculateStatsByLvl(mon, lvl);
+			this.calculateStatsByLvl(mon);
 		});
 
 		mons.sort((a, b) => a.bp - b.bp);
