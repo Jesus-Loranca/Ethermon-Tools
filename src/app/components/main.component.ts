@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'main',
-  templateUrl: '../views/main.html',
+	selector: 'main',
+	templateUrl: '../views/main.html',
 })
 export class AppComponent {
-  title = 'gen-4';
+	title = 'gen-4';
 }
