@@ -1,9 +1,35 @@
 import { Component } from '@angular/core';
+import { mons } from '../data/mons';
+import { Mon } from '../data/types/mon';
 
 @Component({
 	selector: 'main',
 	templateUrl: '../views/main.html',
 })
 export class AppComponent {
-	title = 'gen-4';
+	/**
+	 * Calculates the Mon BP based on the lvl received.
+	 * @param mon Mon
+	 * @param lvl number
+	 */
+	calculateStatsByLvl(mon: Mon, lvl: number) {
+		Object.entries(mon.stats).forEach(
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			([stat, values]) => {
+				mon.bp += values[0] + values[1] * lvl;
+			}
+		);
+	}
+
+	/**
+	 * Order the received array of Mons by BP.
+	 * @param lvl number
+	 */
+	orderMonsByBP(lvl: number) {
+		mons.forEach((mon: Mon) => {
+			this.calculateStatsByLvl(mon, lvl);
+		});
+
+		mons.sort((a, b) => a.bp - b.bp);
+	}
 }
