@@ -27,11 +27,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "sass",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/images/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/assets/sass/styles.sass"
             ],
             "scripts": []
           },
