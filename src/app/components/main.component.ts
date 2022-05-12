@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { mons } from '../data/mons';
 import { Mon } from '../data/types/mon';
 
@@ -6,6 +7,7 @@ import { Mon } from '../data/types/mon';
 	selector: 'main',
 	templateUrl: '../views/main.html',
 })
+
 export class AppComponent {
 	/**
 	 * Calculates the Mon BP based on the lvl received.
@@ -23,9 +25,11 @@ export class AppComponent {
 
 	/**
 	 * Order the received array of Mons by BP.
-	 * @param lvl number
+	 * @param form ngForm
 	 */
-	orderMonsByBP(lvl: number) {
+	orderMonsByBP(form: NgForm) {
+		const lvl: number = Number(form.value.lvl) || 100;
+
 		mons.forEach((mon: Mon) => {
 			this.calculateStatsByLvl(mon, lvl);
 		});

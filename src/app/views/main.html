@@ -1,1 +1,4 @@
-<button (click)="orderMonsByBP(100)">Show the best Mons</button>
+<form #form="ngForm" (submit)="orderMonsByBP(form)">
+    <input type="number" min="0" max="100" placeholder="100" name="lvl" ngModel/>
+    <button type="submit">Show the best Mons</button>
+</form>
