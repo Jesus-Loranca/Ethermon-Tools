@@ -13,7 +13,6 @@
 	"ignorePatterns": [".angular/*", "dist/*", "node_modules/*", "karma.conf.js", "server.js"],
 	"rules": {
 		"indent": ["error", "tab"],
-		"linebreak-style": ["error", "windows"],
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"]
 	}
