@@ -41,7 +41,7 @@ export class AppComponent {
 
 		mons.forEach((mon) => {
 			if ((this.isLastForm && mon.isLastForm) || !this.isLastForm) {
-				this.orderedMons.push([mon.name, mon.name + ': ' + mon.bp.toFixed(2) + ' BP', mon.image]);
+				this.orderedMons.push([mon.name, mon.bp.toFixed(2), mon.image]);
 			}
 		});
 	}

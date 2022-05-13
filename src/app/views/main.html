@@ -25,7 +25,8 @@
 			<h2 class="text-center">Best Mons at level {{ lvl }}</h2>
 			<div *ngFor="let mon of orderedMons" class="row col-6 text-center">
 				<img src="{{ mon[2] }}" alt="{{ mon[0] }} image" />
-				<p>{{ mon[1] }}</p>
+				<p><strong>{{ mon[0] }}</strong></p>
+				<p>{{ mon[1] }} BP</p>
 			</div>
 		</div>
 	</div>
