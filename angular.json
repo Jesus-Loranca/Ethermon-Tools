@@ -27,8 +27,15 @@
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "sass",
 						"assets": ["src/assets/images/favicon.ico", "src/assets"],
-						"styles": ["src/assets/sass/styles.sass"],
-						"scripts": []
+						"styles": [
+							"src/assets/sass/styles.sass",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
+						],
+						"scripts": [
+							"node_modules/jquery/dist/jquery.min.js",
+							"node_modules/@popperjs/core/dist/umd/popper.min.js",
+							"node_modules/bootstrap/dist/js/bootstrap.min.js"
+						]
 					},
 					"configurations": {
 						"production": {
@@ -90,8 +97,15 @@
 						"karmaConfig": "karma.conf.js",
 						"inlineStyleLanguage": "sass",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/styles.sass"],
-						"scripts": []
+						"styles": [
+							"src/styles.sass",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css"
+						],
+						"scripts": [
+							"node_modules/jquery/dist/jquery.min.js",
+							"node_modules/@popperjs/core/dist/umd/popper.min.js",
+							"node_modules/bootstrap/dist/js/bootstrap.min.js"
+						]
 					}
 				}
 			}
