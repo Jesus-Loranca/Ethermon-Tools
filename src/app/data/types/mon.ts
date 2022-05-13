@@ -12,4 +12,5 @@ export interface Mon {
 		sp: Array<number>;
 	};
 	bp: number;
+	isLastForm: boolean;
 }
