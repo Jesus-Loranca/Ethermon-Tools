@@ -1,6 +1,6 @@
-//Install express server
-const express = import('express');
-const path = import('path');
+// Install express server
+const express = require('express');
+const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
