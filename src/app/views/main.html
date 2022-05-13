@@ -1,13 +1,32 @@
-<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
-	<input type="number" min="0" max="100" placeholder="100" name="lvl" ngModel />
-	<input type="checkbox" name="isLastForm" ngModel /><label>Show just final forms</label>
-	<button type="submit">Show the best Mons</button>
-</form>
+<div class="container">
+	<div class="py-5 text-center">
+		<h1>Ethermon Tools</h1>
+	</div>
 
-<div *ngIf="isSubmited">
-	<h2>Best Mons at level {{ lvl }}:</h2>
-	<div *ngFor="let mon of orderedMons">
-		<img src="{{ mon[2] }}" alt="{{ mon[0] }} image">
-		<p>{{ mon[1] }}</p>
+	<div class="col-4">
+		<div class="row col-6">
+			<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
+				<div class="row col-6">
+					<input type="number" class="form-control" min="0" max="100" placeholder="100" name="lvl" ngModel />
+				</div>
+
+				<div class="row">
+					<input type="checkbox" class="col-2" name="isLastForm" id="isLastForm" ngModel />
+					<label class="col-10" for="isLastForm">Show just final forms</label>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="btn btn-secondary">Show the best Mons</button>
+				</div>
+			</form>
+		</div>
+
+		<div *ngIf="isSubmited" class="row col-12 best-mons">
+			<h2 class="text-center">Best Mons at level {{ lvl }}</h2>
+			<div *ngFor="let mon of orderedMons" class="row col-6 text-center">
+				<img src="{{ mon[2] }}" alt="{{ mon[0] }} image" />
+				<p>{{ mon[1] }}</p>
+			</div>
+		</div>
 	</div>
 </div>
