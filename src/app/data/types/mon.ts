@@ -13,4 +13,5 @@ export interface Mon {
 	};
 	bp: number;
 	isLastForm: boolean;
+	image: string;
 }
