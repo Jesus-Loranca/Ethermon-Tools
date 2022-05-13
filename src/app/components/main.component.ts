@@ -46,6 +46,6 @@ export class AppComponent {
 			this.calculateStatsByLvl(mon);
 		});
 
-		mons.sort((a, b) => a.bp - b.bp);
+		mons.sort((a, b) => a.bp > b.bp ? -1 : a.bp < b.bp ? 1 : 0);
 	}
 }
