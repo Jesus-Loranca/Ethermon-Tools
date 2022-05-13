@@ -10,8 +10,9 @@ import { Mon } from '../data/types/mon';
 
 export class AppComponent {
 	lvl = 100;
-	orderedMons: Array<string> = [];
+	isLastForm = false;
 	isSubmited = false;
+	orderedMons: Array<string> = [];
 
 	/**
 	 * Calculates the Mon BP based on the lvl received.
@@ -31,10 +32,13 @@ export class AppComponent {
 	displayOrderedMons(form: NgForm) {
 		this.orderedMons = [];
 		this.lvl = Number(form.value.lvl) || this.lvl;
+		this.isLastForm = Boolean(form.value.isLastForm);
 		this.orderMonsByBP();
 
 		mons.forEach((mon) => {
-			this.orderedMons.push(mon.name + ': ' + mon.bp.toFixed(2) + ' BP');
+			if ((this.isLastForm && mon.isLastForm) || !this.isLastForm) {
+				this.orderedMons.push(mon.name + ': ' + mon.bp.toFixed(2) + ' BP');
+			}
 		});
 	}
 
