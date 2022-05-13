@@ -29,6 +29,10 @@ export class AppComponent {
 		);
 	}
 
+	/**
+	 * Displays the ordered mons in the view.
+	 * @param form NgForm
+	 */
 	displayOrderedMons(form: NgForm) {
 		this.orderedMons = [];
 		this.lvl = Number(form.value.lvl) || this.lvl;
