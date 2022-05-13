@@ -6,5 +6,8 @@
 
 <div *ngIf="isSubmited">
 	<h2>Best Mons at level {{ lvl }}:</h2>
-	<p *ngFor="let mon of orderedMons">{{ mon }}</p>
+	<div *ngFor="let mon of orderedMons">
+		<img src="{{ mon[2] }}" alt="{{ mon[0] }} image">
+		<p>{{ mon[1] }}</p>
+	</div>
 </div>

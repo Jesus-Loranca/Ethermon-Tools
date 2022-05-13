@@ -12,7 +12,7 @@ export class AppComponent {
 	lvl = 100;
 	isLastForm = false;
 	isSubmited = false;
-	orderedMons: Array<string> = [];
+	orderedMons: Array<Array<string>> = [];
 
 	/**
 	 * Calculates the Mon BP based on the lvl received.
@@ -41,7 +41,7 @@ export class AppComponent {
 
 		mons.forEach((mon) => {
 			if ((this.isLastForm && mon.isLastForm) || !this.isLastForm) {
-				this.orderedMons.push(mon.name + ': ' + mon.bp.toFixed(2) + ' BP');
+				this.orderedMons.push([mon.name, mon.name + ': ' + mon.bp.toFixed(2) + ' BP', mon.image]);
 			}
 		});
 	}
