@@ -10,6 +10,7 @@ import { Mon } from '../data/types/mon';
 
 export class AppComponent {
 	lvl = 100;
+	justForm1  = false;
 	isLastForm = false;
 	isSubmited = false;
 	orderedMons: Array<Array<string>> = [];
@@ -36,11 +37,12 @@ export class AppComponent {
 	displayOrderedMons(form: NgForm) {
 		this.orderedMons = [];
 		this.lvl = Number(form.value.lvl) || this.lvl;
+		this.justForm1  = Boolean(form.value.justForm1);
 		this.isLastForm = Boolean(form.value.isLastForm);
 		this.orderMonsByBP();
 
 		mons.forEach((mon) => {
-			if ((this.isLastForm && mon.isLastForm) || !this.isLastForm) {
+			if (((this.isLastForm && mon.isLastForm) || !this.isLastForm) && ((this.justForm1 && mon.form === 1) || !this.justForm1)) {
 				this.orderedMons.push([mon.name, mon.bp.toFixed(2), mon.image]);
 			}
 		});
