@@ -1,12 +1,25 @@
 body {
 	main {
+		.form-wrapper {
+			margin: 0 auto;
+
+			input, div {
+				margin: 0 auto;
+			}
+
+			.form-checkboxes-wrapper {
+				display: inline-block;
+			}
+		}
+
 		form {
+			padding-bottom: 25px;
+
 			.row {
-				padding: 10px 0;
+				padding: 15px 0;
 
 				input[type="checkbox"] {
-					height: 20px;
-					margin-top: 4px;
+					margin: 0;
 				}
 
 				label {
@@ -20,12 +33,15 @@ body {
 		}
 
 		.best-mons {
+			margin: 0 auto;
+
 			h2 {
-				padding-top: 50px;
+				padding: 50px 0 10px 0;
 			}
 
 			.row {
 				padding: 25px 0 0 0;
+				margin: 0;
 
 				img {
 					width: 85%;
