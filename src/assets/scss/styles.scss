@@ -1,4 +1,21 @@
+@import 'variables';
+
 body {
+	.btn {
+		background-color: $button_blue;
+		border-color: $light_blue;
+
+		&:hover {
+			background-color: $button_blue_hover;
+			border-color: $light_blue;
+		}
+
+		&:focus {
+			background-color: $button_blue_hover;
+			box-shadow: 0 0 0 .25rem $light_blue;
+		}
+	}
+
 	main {
 		.form-wrapper {
 			margin: 0 auto;
