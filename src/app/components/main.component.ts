@@ -19,7 +19,7 @@ export class AppComponent {
 	 * Calculates the Mon BP based on the lvl received.
 	 * @param mon Mon
 	 */
-	calculateStatsByLvl(mon: Mon) {
+	calculateBPByLvl(mon: Mon) {
 		mon.bp = 0;
 
 		Object.entries(mon.stats).forEach(
@@ -53,7 +53,7 @@ export class AppComponent {
 	 */
 	orderMonsByBP() {
 		mons.forEach((mon: Mon) => {
-			this.calculateStatsByLvl(mon);
+			this.calculateBPByLvl(mon);
 		});
 
 		mons.sort((a, b) => a.bp > b.bp ? -1 : a.bp < b.bp ? 1 : 0);
