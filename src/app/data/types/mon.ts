@@ -1,5 +1,6 @@
 export interface Mon {
 	id: number;
+	new_id: number;
 	name: string;
 	types: Array<string>;
 	ancestors: Array<string>;
@@ -14,5 +15,6 @@ export interface Mon {
 	bp: number;
 	form: number;
 	isLastForm: boolean;
+	rarity: string;
 	image: string;
 }
