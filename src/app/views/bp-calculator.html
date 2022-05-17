@@ -4,23 +4,83 @@
 			<h3>BP Calculator by Level</h3>
 		</div>
 
-		<div class="row col-12 col-md-6 col-lg-3 form-wrapper">
+		<div class="row col-12 col-md-6 col-lg-4 form-wrapper">
 			<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
-				<div class="row col-12">
-					<input type="number" class="form-control" min="1" max="100" value="100" placeholder="100" name="lvl" ngModel />
+				<div class="row col-6">
+					<label for="lvl">Level:</label>
+					<input
+						type="number"
+						class="form-control"
+						min="1"
+						max="100"
+						value="100"
+						placeholder="100"
+						name="lvl"
+						ngModel
+					/>
 				</div>
 
-				<div class="row col-6 form-checkboxes-wrapper">
+				<div class="row col-6">
+					<label for="types">Type:</label>
+					<select class="form-select selectpicker" name="types" id="types" multiple ngModel>
+						<option value="" selected>All Types</option>
+						<option value="insect">Insect</option>
+						<option value="dragon">Dragon</option>
+						<option value="mystic">Mystic</option>
+						<option value="fire">Fire</option>
+						<option value="phantom">Phantom</option>
+						<option value="earth">Earth</option>
+						<option value="neutral">Neutral</option>
+						<option value="telepath">Telepath</option>
+						<option value="iron">Iron</option>
+						<option value="lightning">Lightning</option>
+						<option value="combat">Combat</option>
+						<option value="flyer">Flyer</option>
+						<option value="leaf">Leaf</option>
+						<option value="ice">Ice</option>
+						<option value="toxin">Toxin</option>
+						<option value="rock">Rock</option>
+						<option value="water">Water</option>
+					</select>
+				</div>
+
+				<div class="row col-6">
+					<label for="rarities">Rarities:</label>
+					<select class="form-select selectpicker" name="rarities" id="rarities" multiple ngModel>
+						<option value="" selected>All Rarities</option>
+						<option value="mythic">Mythic</option>
+						<option value="legendary">Legendary</option>
+						<option value="rare">Rare</option>
+						<option value="uncommon">Uncommon</option>
+						<option value="common">Common</option>
+						<option value="gason">Gason</option>
+					</select>
+				</div>
+
+				<div class="row col-6">
+					<label for="stats">Stats:</label>
+					<select class="form-select selectpicker" name="stats" id="stats" multiple ngModel>
+						<option value="" selected>All Stats</option>
+						<option value="hp">HP</option>
+						<option value="pa">PA</option>
+						<option value="pd">PD</option>
+						<option value="sa">SA</option>
+						<option value="sd">SD</option>
+						<option value="sp">SP</option>
+					</select>
+				</div>
+
+				<div class="row col-6">
 					<input type="checkbox" class="col-2" name="justForm1" id="justForm1" ngModel />
 					<label class="col-8" for="justForm1">First Forms</label>
 				</div>
 
-				<div class="row col-6 form-checkboxes-wrapper test">
+				<div class="row col-6">
 					<input type="checkbox" class="col-2" name="isLastForm" id="isLastForm" ngModel />
 					<label class="col-8" for="isLastForm">Final Forms</label>
 				</div>
 
-				<div class="row">
+				<div class="row col-12">
 					<button type="submit" class="btn btn-secondary">Show the Best Mons</button>
 				</div>
 			</form>
