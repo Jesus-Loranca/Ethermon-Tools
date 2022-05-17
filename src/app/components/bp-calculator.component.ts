@@ -4,11 +4,11 @@ import { mons } from '../data/mons';
 import { Mon } from '../data/types/mon';
 
 @Component({
-	selector: 'main',
-	templateUrl: '../views/main.html',
+	selector: 'bp-calculator',
+	templateUrl: '../views/bp-calculator.html',
 })
 
-export class AppComponent {
+export class BpCalculatorComponent {
 	lvl = 100;
 	justForm1  = false;
 	isLastForm = false;

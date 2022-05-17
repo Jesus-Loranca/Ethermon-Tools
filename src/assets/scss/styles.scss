@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'bp-calculator';
 
 body {
 	.btn {
@@ -13,64 +14,6 @@ body {
 		&:focus {
 			background-color: $button_blue_hover;
 			box-shadow: 0 0 0 .25rem $light_blue;
-		}
-	}
-
-	main {
-		.form-wrapper {
-			margin: 0 auto;
-
-			input, div {
-				margin: 0 auto;
-			}
-
-			.form-checkboxes-wrapper {
-				display: inline-block;
-			}
-		}
-
-		form {
-			padding-bottom: 25px;
-
-			.row {
-				padding: 15px 0;
-
-				input[type="checkbox"] {
-					margin: 0;
-				}
-
-				label {
-					padding-left: 5px;
-				}
-
-				.btn {
-					margin-top: 15px;
-				}
-			}
-		}
-
-		.best-mons {
-			margin: 0 auto;
-
-			h3 {
-				padding: 50px 0 10px 0;
-			}
-
-			.row {
-				padding: 25px 0 0 0;
-				margin: 0;
-
-				img {
-					max-height: 85%;
-					max-width: 85%;
-					margin: 0 auto;
-				}
-
-				p:first-of-type {
-					padding: 15px 0 0 0;
-					margin-bottom: 5px;
-				}
-			}
 		}
 	}
 }
