@@ -6,18 +6,22 @@
 
 		<div class="row col-12 col-md-6 col-lg-4 form-wrapper">
 			<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
-				<div class="row col-6">
+				<div class="row col-12">
 					<label for="lvl">Level:</label>
-					<input
-						type="number"
-						class="form-control"
-						min="1"
-						max="100"
-						value="100"
-						placeholder="100"
-						name="lvl"
-						ngModel
-					/>
+					<input type="number" class="form-control" min="1" max="100" value="100" placeholder="100" name="lvl" ngModel />
+				</div>
+
+				<div class="row col-6">
+					<label for="stats">Stats:</label>
+					<select class="form-select selectpicker" name="stats" id="stats" multiple ngModel>
+						<option value="" selected>All Stats</option>
+						<option value="hp">HP</option>
+						<option value="pa">PA</option>
+						<option value="pd">PD</option>
+						<option value="sa">SA</option>
+						<option value="sd">SD</option>
+						<option value="sp">SP</option>
+					</select>
 				</div>
 
 				<div class="row col-6">
@@ -45,6 +49,16 @@
 				</div>
 
 				<div class="row col-6">
+					<label for="forms">Forms:</label>
+					<select class="form-select selectpicker" name="forms" id="forms" multiple ngModel>
+						<option value="" selected>All Forms</option>
+						<option value="1">Form 1</option>
+						<option value="2">Form 2</option>
+						<option value="3">Form 3</option>
+					</select>
+				</div>
+
+				<div class="row col-6">
 					<label for="rarities">Rarities:</label>
 					<select class="form-select selectpicker" name="rarities" id="rarities" multiple ngModel>
 						<option value="" selected>All Rarities</option>
@@ -55,29 +69,6 @@
 						<option value="common">Common</option>
 						<option value="gason">Gason</option>
 					</select>
-				</div>
-
-				<div class="row col-6">
-					<label for="stats">Stats:</label>
-					<select class="form-select selectpicker" name="stats" id="stats" multiple ngModel>
-						<option value="" selected>All Stats</option>
-						<option value="hp">HP</option>
-						<option value="pa">PA</option>
-						<option value="pd">PD</option>
-						<option value="sa">SA</option>
-						<option value="sd">SD</option>
-						<option value="sp">SP</option>
-					</select>
-				</div>
-
-				<div class="row col-6">
-					<input type="checkbox" class="col-2" name="justForm1" id="justForm1" ngModel />
-					<label class="col-8" for="justForm1">First Forms</label>
-				</div>
-
-				<div class="row col-6">
-					<input type="checkbox" class="col-2" name="isLastForm" id="isLastForm" ngModel />
-					<label class="col-8" for="isLastForm">Final Forms</label>
 				</div>
 
 				<div class="row col-12">

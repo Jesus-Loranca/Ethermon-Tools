@@ -12,8 +12,7 @@ export class BpCalculatorComponent {
 	types = [''];
 	stats = [''];
 	rarities = [''];
-	justForm1 = false;
-	isLastForm = false;
+	forms = [''];
 	isSubmited = false;
 	orderedMons: Array<Array<string>> = [];
 
@@ -41,8 +40,7 @@ export class BpCalculatorComponent {
 		this.types = form.value.types || [''];
 		this.stats = form.value.stats || [''];
 		this.rarities = form.value.rarities || [''];
-		this.justForm1 = Boolean(form.value.justForm1);
-		this.isLastForm = Boolean(form.value.isLastForm);
+		this.forms = form.value.forms || [''];
 
 		this.orderMonsByBP();
 
@@ -62,8 +60,7 @@ export class BpCalculatorComponent {
 		const isAcceptedRarty: boolean =
 			(this.rarities.length === 1 && this.rarities.includes('')) || this.rarities.includes(mon.rarity);
 		const isAcceptedForm: boolean =
-			((this.isLastForm && mon.isLastForm) || !this.isLastForm) &&
-			((this.justForm1 && mon.form === 1) || !this.justForm1);
+			(this.forms.length === 1 && this.forms.includes('')) || this.forms.includes(String(mon.form));
 
 		if (isAcceptedType && isAcceptedRarty && isAcceptedForm) {
 			this.orderedMons.push([mon.name, mon.bp.toFixed(2), mon.image]);
