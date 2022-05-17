@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container bp-calculator">
 	<div class="col-12">
 		<div class="py-5 text-center">
 			<h3>BP Calculator by Level</h3>
 		</div>
 
 		<div class="row col-12 col-md-6 col-lg-4 form-wrapper">
-			<form #form="ngForm" (submit)="displayOrderedMons(form);isSubmited=true">
+			<form #form="ngForm" (submit)="displayOrderedMons(form); isSubmited=true">
 				<div class="row col-12">
 					<label for="lvl">Level:</label>
 					<input type="number" class="form-control" min="1" max="100" value="100" placeholder="100" name="lvl" ngModel />

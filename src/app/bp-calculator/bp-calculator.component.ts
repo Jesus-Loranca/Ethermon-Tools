@@ -4,8 +4,8 @@ import { mons } from '../data/mons';
 import { Mon } from '../data/types/mon';
 
 @Component({
-	selector: 'bp-calculator',
-	templateUrl: '../views/bp-calculator.html',
+	selector: 'app-bp-calculator',
+	templateUrl: './bp-calculator.component.html',
 })
 export class BpCalculatorComponent {
 	lvl = 100;
