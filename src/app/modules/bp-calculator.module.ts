@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../routing.module';
+import { AppRoutingModule } from './routing.module';
 import { BpCalculatorComponent } from '../components/bp-calculator.component';
 import { FormsModule } from '@angular/forms';
 
@@ -10,5 +10,4 @@ import { FormsModule } from '@angular/forms';
 	providers: [],
 	bootstrap: [BpCalculatorComponent],
 })
-
 export class BpCalculatorModule {}
