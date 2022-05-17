@@ -22,10 +22,12 @@ export class BpCalculatorComponent {
 	 */
 	calculateBPByLvl(mon: Mon) {
 		mon.bp = 0;
+		const allStats: boolean = (this.stats.length === 1 && this.stats.includes(''));
+		const statsCount: number = allStats ? 6 : this.stats.length;
 
 		Object.entries(mon.stats).forEach(([stat, values]) => {
-			if ((this.stats.length === 1 && this.stats.includes('')) || this.stats.includes(stat)) {
-				mon.bp += (values[0] + values[1] * this.lvl) / 6;
+			if (allStats || this.stats.includes(stat)) {
+				mon.bp += (values[0] + values[1] * this.lvl) / statsCount;
 			}
 		});
 	}
