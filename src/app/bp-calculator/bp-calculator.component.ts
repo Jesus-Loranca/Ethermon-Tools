@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { mons } from '../data/mons';
-import { Mon } from '../data/types/mon';
+import { mons } from 'src/data/mons';
+import { Mon } from 'src/data/types/mon';
 
 @Component({
-	selector: 'app-bp-calculator',
+	selector: 'bp-calculator',
 	templateUrl: './bp-calculator.component.html',
 })
 export class BpCalculatorComponent {

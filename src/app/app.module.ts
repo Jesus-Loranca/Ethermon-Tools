@@ -4,18 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BpCalculatorComponent } from './bp-calculator/bp-calculator.component';
+import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		BpCalculatorComponent
-	],
-	imports: [
-		BrowserModule,
-		FormsModule,
-		AppRoutingModule
-	],
+	declarations: [AppComponent, BpCalculatorComponent, EncyclopediaComponent],
+	imports: [BrowserModule, FormsModule, AppRoutingModule],
 	providers: [],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
