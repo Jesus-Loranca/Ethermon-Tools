@@ -6,7 +6,7 @@ import { Mon } from 'src/data/types/mon';
 	selector: 'encyclopedia',
 	templateUrl: './encyclopedia.component.html',
 })
-export class EncyclopediaComponent {
+export class EncyclopediaComponent implements OnInit {
 	encyclopedia: Array<Mon> = [];
 
 	ngOnInit() {
