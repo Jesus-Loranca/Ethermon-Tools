@@ -14,7 +14,8 @@ export class BpCalculatorComponent {
 	rarities = [''];
 	forms = [''];
 	isSubmited = false;
-	orderedMons: Array<Array<string>> = [];
+	orderedMons: Array<Mon> = [];
+	filteredMons: Array<Mon> = [];
 
 	/**
 	 * Calculates the Mon BP based on the lvl received.
@@ -38,6 +39,7 @@ export class BpCalculatorComponent {
 	 */
 	displayOrderedMons(form: NgForm) {
 		this.orderedMons = [];
+		this.filteredMons = [];
 		this.lvl = Number(form.value.lvl) || this.lvl;
 		this.types = form.value.types || [''];
 		this.stats = form.value.stats || [''];
@@ -46,7 +48,7 @@ export class BpCalculatorComponent {
 
 		this.orderMonsByBP();
 
-		mons.forEach((mon) => {
+		this.orderedMons.forEach((mon) => {
 			this.filterMons(mon);
 		});
 	}
@@ -65,7 +67,7 @@ export class BpCalculatorComponent {
 			(this.forms.length === 1 && this.forms.includes('')) || this.forms.includes(String(mon.form));
 
 		if (isAcceptedType && isAcceptedRarty && isAcceptedForm) {
-			this.orderedMons.push([mon.name, mon.bp.toFixed(2), mon.image]);
+			this.filteredMons.push(mon);
 		}
 	}
 
@@ -73,10 +75,12 @@ export class BpCalculatorComponent {
 	 * Order the received array of Mons by BP.
 	 */
 	orderMonsByBP() {
-		mons.forEach((mon: Mon) => {
+		this.orderedMons = mons.slice(0);
+
+		this.orderedMons.forEach((mon: Mon) => {
 			this.calculateBPByLvl(mon);
 		});
 
-		mons.sort((a, b) => (a.bp > b.bp ? -1 : a.bp < b.bp ? 1 : 0));
+		this.orderedMons.sort((a, b) => (a.bp > b.bp ? -1 : a.bp < b.bp ? 1 : 0));
 	}
 }

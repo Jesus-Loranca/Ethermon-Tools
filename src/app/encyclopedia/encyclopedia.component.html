@@ -2,7 +2,7 @@
 	<div class="col-12">
 		<div class="row col-12 best-mons">
 			<h3 class="text-center">Encyclopedia</h3>
-			<div *ngFor="let mon of mons" class="row col-6 col-md-4 col-lg-2 text-center">
+			<div *ngFor="let mon of encyclopedia" class="row col-6 col-md-4 col-lg-2 text-center">
 				<img src="{{ mon.image }}" alt="{{ mon.name }} image" />
 				<p>{{ mon.new_id }}. {{ mon.name }}</p>
 			</div>
