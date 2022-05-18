@@ -3764,7 +3764,7 @@ export const mons: Array<Mon> = [
 	{
 		id: 190,
 		new_id: 189,
-		name: 'Cannubis',
+		name: 'Keefo',
 		types: ['leaf', 'phantom'],
 		ancestors: ['Greipawn', 'Malakel\'e', 'Lemeeni'],
 		stats: {
