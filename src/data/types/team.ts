@@ -1,4 +1,4 @@
-import { Mon } from "./mon";
+import { Mon } from './mon';
 
 export interface Team {
 	synergy: number;
